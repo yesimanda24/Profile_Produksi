@@ -1,0 +1,388 @@
+:root {
+    --primary-color: #15803d; /* Dominan Hijau */
+    --primary-hover: #166534;
+    --accent-color: #22c55e; /* Hijau terang */
+    --bg-color: #ffffff; /* Latar Putih */
+    --surface-color: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+    
+    --sdh-color: #10b981; /* Green for Sumber Daya Hayati */
+    --sdmki-color: #f59e0b; /* Amber for SDMKI */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ==================
+   HEADER (NAVBAR)
+   ================== */
+header {
+    background-color: var(--surface-color);
+    border-bottom: 3px solid var(--accent-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.logo-container {
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.header-text h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.header-text p {
+    color: var(--text-muted);
+    font-size: 0.875rem;
+    margin: 0;
+    font-weight: 500;
+}
+
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem; /* Spacing between slices */
+}
+
+/* ==================
+   SLICING 1: HERO
+   ================== */
+.hero-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, rgba(21, 128, 61, 0.85) 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 3rem 2.5rem;
+    box-shadow: 0 10px 25px -5px rgba(21, 128, 61, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    right: -10%;
+    bottom: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+    opacity: 0.15;
+    border-radius: 50%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin: 0 0 1rem 0;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.125rem;
+    color: #e2e8f0;
+    margin: 0 0 1.5rem 0;
+}
+
+.badge-team {
+    display: inline-flex;
+    align-items: center;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(4px);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+/* ==================
+   GENERAL CARD STYLE
+   ================== */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 1.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.slice-container {
+    background: var(--surface-color);
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    border: 1px solid var(--border-color);
+}
+
+/* ==================
+   SLICING 2 & 3: CHARTS
+   ================== */
+/* Legend */
+.legend {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    background: var(--bg-color);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    margin-right: 0.5rem;
+}
+
+.chart-wrapper {
+    position: relative;
+    height: 400px;
+    width: 100%;
+}
+
+/* ==================================
+   GANTT CHART MODERN MINIMALIST THEME
+   ================================== */
+.gantt .grid-background { fill: transparent; }
+.gantt .grid-header { fill: transparent; stroke: var(--border-color); stroke-width: 1; }
+.gantt .grid-row { fill: transparent; }
+.gantt .grid-row:nth-child(even) { fill: #f8fafc; }
+.gantt .row-line { stroke: var(--border-color); stroke-width: 0.5; }
+.gantt .tick { stroke: var(--border-color); stroke-width: 1; }
+.gantt .upper-text, .gantt .lower-text { 
+    font-family: 'Inter', sans-serif; 
+    font-size: 11px; 
+    fill: var(--text-muted); 
+    font-weight: 500; 
+}
+
+/* Mengatur bar agar terlihat membulat dan datar tanpa gradient */
+.gantt .bar { stroke: transparent; }
+.gantt .bar-progress { fill: rgba(0, 0, 0, 0.15); } /* bayangan untuk progres bar */
+
+/* Menyorot tanggal hari ini secara spesifik di kalender */
+.gantt .today-highlight { 
+    fill: rgba(34, 197, 94, 0.15); /* Warna hijau terang untuk hari ini */
+    stroke: var(--primary-color);
+    stroke-width: 1px;
+}
+
+/* Bar Custom Colors untuk Tahapan (Modern Flat) */
+.gantt .bar-wrapper.bar-tahap1 .bar { fill: #8b5cf6; } /* Pelatihan: Ungu */
+.gantt .bar-wrapper.bar-tahap2 .bar { fill: #3b82f6; } /* Pencacahan: Biru */
+.gantt .bar-wrapper.bar-tahap3 .bar { fill: #f59e0b; } /* Pemeriksaan: Kuning/Jingga */
+.gantt .bar-wrapper.bar-tahap4 .bar { fill: #ec4899; } /* Pengolahan: Merah Muda */
+.gantt .bar-wrapper.bar-tahap5 .bar { fill: #10b981; } /* Evaluasi: Hijau */
+
+/* Blok Grup/Parent Survei (Tebal, Transparan Clean) */
+.gantt .bar-wrapper.bar-group .bar { 
+    fill: #f8fafc; /* Sama dengan grid belakang agar seakan menyatu namun ada batas */
+    stroke: #cbd5e1;
+    stroke-width: 1px;
+    height: 18px; /* Lebih tebal agar tulisan tidak tumpah */
+    transform: translateY(-3px); /* Kalibrasi y karena tinggi diubah dari 12px */
+} 
+.gantt .bar-wrapper.bar-group .bar-progress { 
+    display: none; /* Jangan tampilkan progress bar hitam untuk text heading */
+} 
+.gantt .bar-wrapper.bar-group .bar-label,
+.gantt .bar-wrapper.bar-group .bar-label.big { 
+    display: block !important; 
+    fill: #0f3c5f; 
+    font-size: 12px !important;
+    font-weight: 700;
+}
+
+/* Sembunyikan label pada tahapan-tahapan kecil agar tipis */
+.gantt .bar-wrapper:not(.bar-group) .bar-label, 
+.gantt .bar-wrapper:not(.bar-group) .bar-label.big { 
+    display: none !important;
+}
+
+/* ==================
+   SLICING 4: CARDS
+   ================== */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+}
+
+.survey-card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.survey-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -8px rgba(0, 0, 0, 0.1);
+    border-color: var(--primary-color);
+}
+
+.card-topbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+}
+
+.bg-sdh { background-color: var(--sdh-color); }
+.bg-sdmki { background-color: var(--sdmki-color); }
+
+.survey-card-header {
+    margin-bottom: 1rem;
+}
+
+.badge-status {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.75rem;
+}
+.status-selesai { background: #dcfce7; color: #166534; }
+.status-berjalan { background: #dbeafe; color: #1e40af; }
+.status-persiapan { background: #fef9c3; color: #854d0e; }
+
+.survey-card h3 {
+    margin: 0 0 0.25rem 0;
+    font-size: 1.25rem;
+    color: var(--text-main);
+}
+
+.survey-card-team {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.survey-card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-top: 1px dashed var(--border-color);
+    padding-top: 1rem;
+}
+
+.info-row {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.info-value {
+    font-size: 0.875rem;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.info-value a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.info-value a:hover {
+    text-decoration: underline;
+}
+
+/* Progress Bar mini inside card */
+.mini-progress {
+    width: 100%;
+    height: 6px;
+    background: var(--border-color);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+.mini-progress-bar {
+    height: 100%;
+    border-radius: 999px;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    .hero-section {
+        padding: 2rem 1.5rem;
+    }
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+}
