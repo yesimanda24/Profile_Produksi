@@ -1,0 +1,27 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    public function up(): void
+    {
+        Schema::create('publikasi', function (Blueprint $table) {
+            $table->id();
+            $table->string('judul');
+            $table->string('kategori'); // contoh: Laporan, Buletin, dll
+            $table->integer('tahun');
+            $table->string('cover')->nullable();  // gambar cover
+            $table->string('file_pdf')->nullable(); // file pdf publikasi
+            $table->boolean('tampil_di_home')->default(true);
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('publikasi');
+    }
+};

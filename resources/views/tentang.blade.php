@@ -402,7 +402,7 @@
                     <div class="photo-ph" style="display:none"><i class="fas fa-user"></i></div>
                 </div>
                 <div class="card-info">
-                    <span class="card-badge b-ketua">⭐ Ketua Tim</span>
+                    <span class="card-badge b-ketua"> Ketua Tim</span>
                     <p class="card-name">Eva Riani</p>
                     <p class="card-role">Ketua Tim Statistik Produksi</p>
                     <p class="card-jab">Statistisi Ahli Madya — BPS Provinsi Jambi</p>
@@ -428,7 +428,7 @@
                     <div class="photo-ph" style="display:none"><i class="fas fa-user"></i></div>
                 </div>
                 <div class="card-info">
-                    <span class="card-badge b-subtim">🌿 Ketua Subtim</span>
+                    <span class="card-badge b-subtim"> Ketua Subtim</span>
                     <p class="card-name">Eny Tristanti</p>
                     <p class="card-role">Ketua Subtim Statistik Pertanian</p>
                     <p class="card-jab">Fungsional Ahli Madya — BPS Provinsi Jambi</p>

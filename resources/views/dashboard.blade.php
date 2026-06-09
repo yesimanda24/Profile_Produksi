@@ -396,7 +396,7 @@
                     <div class="panel-title-wrap">
                         <div class="panel-title-icon" style="background:#dcfce7;">🌿</div>
                         <div>
-                            <div class="panel-title" style="color:#16a34a;">SDH (Sektor Hayati)</div>
+                            <div class="panel-title" style="color:#16a34a;">SDH (Sumber Daya Hayati)</div>
                             <div class="panel-subtitle">Statistik terkait sumber daya hayati dan lingkungan</div>
                         </div>
                     </div>

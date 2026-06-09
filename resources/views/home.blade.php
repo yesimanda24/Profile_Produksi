@@ -199,7 +199,7 @@
         <li><a href="/dashboard">Dashboard</a></li>
         <li><a href="/kegiatan">Kegiatan</a></li>
         <li><a href="/tentang">Tentang</a></li>
-    </ul>
+        <li><a href="/login" title="Login Admin" style="color:#6b7280;padding:6px 10px;border-radius:8px;transition:color 0.2s;" onmouseover="this.style.color='#1a56db'" onmouseout="this.style.color='#6b7280'"><i class="fas fa-user-circle" style="font-size:18px;"></i></a></li>    </ul>
 </nav>
 
 <!-- HERO -->
